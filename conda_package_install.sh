@@ -18,6 +18,7 @@ cat <<__EOF__
 ======================================================================
 __EOF__
 read
+conda install -yq jupyter
 conda install -yq tensorflow
 conda install -yq huggingface_hub transformers pytorch
 conda install -yq pandas numpy matplotlib
