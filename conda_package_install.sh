@@ -16,13 +16,24 @@ cat <<__EOF__
  Author: Joff Thyer and Derek Banks (c) 2024
 
 ======================================================================
+
+-< Press ENTER to Continue or CTRL-C to QUIT >-
+
 __EOF__
 read
-conda install -yq jupyter
-conda install -yq tensorflow
-conda install -yq huggingface_hub transformers pytorch
-conda install -yq pandas numpy matplotlib
-conda install -yq nltk seaborn plotly
-conda install -yq scikit-learn
+echo "[+] Installing: jupyter"
+conda install -yq jupyter >/dev/null 2>&1
+echo "[+] Installing: tensorflow"
+conda install -yq tensorflow >/dev/null 2>&1
+echo "[+] Installing: hugginface_hub, transformers, pytorch"
+conda install -yq huggingface_hub transformers pytorch >/dev/null 2>&1
+echo "[+] Installing: pandas, numpy, matplotlib"
+conda install -yq pandas numpy matplotlib >/dev/null 2>&1
+echo "[+] Installing: nltk, seaborn, plotly"
+conda install -yq nltk seaborn plotly >/dev/null 2>&1
+echo "[+] Installing: scikit-learn"
+conda install -yq scikit-learn >/dev/null 2>&1
 echo ""
-echo "### Completed Installations ###"
+echo "#############################################"
+echo "### Successfully Completed Installations! ###"
+echo "#############################################"
