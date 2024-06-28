@@ -43,7 +43,7 @@ if [[ `uname -r` == *"WSL2"* ]]; then
 	cat <<__EOF__ >>$HOME/.bashrc
 export LD_LIBRARY_PATH=\`echo \$(find $HOME/miniconda3/envs/$CONDA_DEFAULT_ENV/lib/python3.10/site-packages/nvidia -type d -name lib) | sed 's/ /:/g'\`
 __EOF__
-	python -c 'import tensorflow as tf; print(f"GPU Device Check: {tf.config.list_physical_devices()}")' 2>/dev/null
+	python -c 'import tensorflow as tf; print(f"[+] GPU Device Check: {tf.config.list_physical_devices(\'GPU\')}")' 2>/dev/null
 else
 	echo "[*] #######################################################"
 	echo "[*] ## Target System UNIX/MacOS/BSD: using conda method. ##"
