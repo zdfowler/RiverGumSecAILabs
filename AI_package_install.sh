@@ -39,6 +39,7 @@ if [[ `uname -r` == *"WSL2"* ]]; then
 	conda install -yq cudatoolkit >/dev/null 2>&1
 	echo "[+] Installing: tensorflow[and-cuda] for WSL2"
 	pip install -q tensorflow[and-cuda] >/dev/null 2>&1
+	export LD_LIBRARY_PATH=`echo $(find $HOME/miniconda3/envs/$CONDA_DEFAULT_ENV/lib/python3.10/site-packages/nvidia -type d -name lib) | sed 's/ /:/g'`
 else
 	echo "[*] #######################################################"
 	echo "[*] ## Target System UNIX/MacOS/BSD: using conda method. ##"
