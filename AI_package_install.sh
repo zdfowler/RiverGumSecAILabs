@@ -36,7 +36,7 @@ if [[ `uname -r` == *"WSL2"* ]]; then
 	echo "[+] Installing: scikit-learn"
 	pip install -q scikit-learn >/dev/null 2>&1
 	echo "[+] Installing: cudatoolkit for WSL2"
-	pip install -q cudatoolkit >/dev/null 2>&1
+	conda install -yq cudatoolkit >/dev/null 2>&1
 	echo "[+] Installing: tensorflow[and-cuda] for WSL2"
 	pip install -q tensorflow[and-cuda] >/dev/null 2>&1
 else
