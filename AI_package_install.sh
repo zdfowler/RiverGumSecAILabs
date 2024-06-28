@@ -28,7 +28,7 @@ if [[ `uname -r` == *"WSL2"* ]]; then
 	echo "[+] Installing: jupyter"
 	pip install -q jupyter >/dev/null 2>&1
 	echo "[+] Installing: huggingface_hub, transformers, pytorch"
-	pip install -q huggingface_hub transformers pytorch >/dev/null 2>&1
+	pip install -q huggingface_hub transformers torch >/dev/null 2>&1
 	echo "[+] Installing: pandas, numpy, matplotlib"
 	pip install -q pandas numpy matplotlib >/dev/null 2>&1
 	echo "[+] Installing: nltk, seaborn, plotly"
