@@ -21,6 +21,15 @@ cat <<__EOF__
 
 __EOF__
 read
+if [[ `uname -r` == *"WSL2"* ]]; then
+	echo "[+] Installing: cudatoolkit for WSL2"
+	conda install -yq cudatoolkit >/dev/null 2>&1
+	echo "[+] Installing: tensorflow[and-cuda] for WSL2"
+	pip install -q tensorflow[and-cuda] >/dev/null 2>&1
+else
+	echo "[+] Installing: tensorflow"
+	conda install -yq tensorflow >/dev/null 2>&1
+fi
 echo "[+] Installing: jupyter"
 conda install -yq jupyter >/dev/null 2>&1
 echo "[+] Installing: huggingface_hub, transformers, pytorch"
@@ -31,15 +40,6 @@ echo "[+] Installing: nltk, seaborn, plotly"
 conda install -yq nltk seaborn plotly >/dev/null 2>&1
 echo "[+] Installing: scikit-learn"
 conda install -yq scikit-learn >/dev/null 2>&1
-if [[ `uname -r` == *"WSL2"* ]]; then
-	echo "[+] Installing: cudatoolkit for WSL2"
-	conda install -yq cudatoolkit >/dev/null 2>&1
-	echo "[+] Installing: tensorflow[and-cuda] for WSL2"
-	pip install -q tensorflow[and-cuda] >/dev/null 2>&1
-else
-	echo "[+] Installing: tensorflow"
-	conda install -yq tensorflow >/dev/null 2>&1
-fi
 echo ""
 echo "#############################################"
 echo "### Successfully Completed Installations! ###"
