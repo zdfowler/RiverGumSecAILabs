@@ -21,10 +21,17 @@ cat <<__EOF__
 
 __EOF__
 read
+if [[ `uname -r` == *"WSL2*" ]]; then
+	echo "[+] Installing: cudatoolkit for WSL2"
+	conda install -yq cudatoolkit >/dev/null 2>&1
+	echo "[+] Installing: tensorflow[and-cuda] for WSL2"
+	pip install -q tensorflow[and-cuda] >/dev/null 2>&1
+else
+	echo "[+] Installing: tensorflow"
+	conda install -yq tensorflow >/dev/null 2>&1
+fi
 echo "[+] Installing: jupyter"
 conda install -yq jupyter >/dev/null 2>&1
-echo "[+] Installing: tensorflow"
-conda install -yq tensorflow >/dev/null 2>&1
 echo "[+] Installing: hugginface_hub, transformers, pytorch"
 conda install -yq huggingface_hub transformers pytorch >/dev/null 2>&1
 echo "[+] Installing: pandas, numpy, matplotlib"
