@@ -30,6 +30,8 @@ echo "[+] Installing: jupyter"
 conda install jupyter >/dev/null 2>&1
 echo "[+] Installing: unsloth"
 pip install -q --upgrade unsloth >/dev/null 2>&1
-echo "[+] Installing: unsloth"
+echo "[+] Upgrading: unsloth"
 pip install --no-warn-conflicts git+https://github.com/huggingface/transformers.git git+https://github.com/huggingface/trl.git >/dev/null 2>&1
+echo "[+] Installing GCC using apt"
+sudo apt -y install gcc >/dev/null 2>&1
 echo "### Successfully Completed Installations! ###"
