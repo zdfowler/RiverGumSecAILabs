@@ -4,14 +4,9 @@ set -e
 cat <<__EOF__
 
 ======================================================================
- This shell script uses CONDA to install all required AI development
- packages. You must have already created and activated your
- conda environment using:
-
-	conda create -n ai python=3.10
-	conda activate ai
-
- BEFORE using this script.  Press CTRL-C to cancel to ENTER to continue.
+                                                                                                                         This shell script uses PIP/CONDA to install all required                                                                AI development packages. You must have already created
+ and activated your conda environment.
+                                                                                                                         Note: works with Python3.12 Conda Env.
 
  Author: Joff Thyer and Derek Banks (c) 2024
 
@@ -27,15 +22,12 @@ if [[ `uname -r` == *"WSL2"* ]]; then
 	echo "[*] ## Target System is WSL2: using PIP method. ##"
 	echo "[*] ##############################################"
 
-	echo "[+] Installing GCC using apt"
-	sudo apt -y install gcc >/dev/null 2>&1
-
+	echo "[+] Installing GCC using apt if needed."
+	gcc -v >/dev/null 2>&1 || sudo apt -y install gcc >/dev/null 2>&1
 	echo "[+] Installing: cudatoolkit for WSL2"
 	conda install -yq cudatoolkit >/dev/null 2>&1
-
 	echo "[+] Installing: jupyter"
 	pip install -q jupyter >/dev/null 2>&1
-
 	echo "[+] Installing: pandas, numpy, matplotlib"
 	pip install -q pandas numpy matplotlib >/dev/null 2>&1
 	echo "[+] Installing: nltk, seaborn, plotly"
@@ -43,14 +35,10 @@ if [[ `uname -r` == *"WSL2"* ]]; then
 	echo "[+] Installing: scikit-learn"
 	pip install -q scikit-learn >/dev/null 2>&1
 
-	echo "[+] Installing: tensorflow[and-cuda] for WSL2"
-	pip install -q tensorflow[and-cuda] >/dev/null 2>&1
-
-	echo "[+] Installing: unsloth"
+	echo "[+] Installing/Upgrading: unsloth" >/dev/null 2>&1
 	pip install -q --upgrade unsloth >/dev/null 2>&1
-	echo "[+] Upgrading: unsloth"
+	echo "[+] Installing/Upgrading: transformers, huggingface"
 	pip install --no-warn-conflicts git+https://github.com/huggingface/transformers.git git+https://github.com/huggingface/trl.git >/dev/null 2>&1
-
 
 else
 
