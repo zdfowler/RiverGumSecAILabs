@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ailabs-022-llms"
+version = "0.1.0"
+description = ""
+authors = ["Joff Thyer <joff@blackhillsinfosec.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jupyter = "^1.1.1"
+unsloth = "^2024.11.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
