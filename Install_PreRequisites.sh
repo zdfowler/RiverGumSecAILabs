@@ -6,9 +6,9 @@ if [ ! -e "/usr/bin/gcc" ]; then
 fi
 if [ ! -d "$HOME/miniconda3" ]; then
 	echo "[*] Installing miniconda3"
-	#wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-	#/bin/bash Miniconda3-latest-Linux-x86_64.sh -b
-	#$HOME/miniconda3/bin/conda init
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	/bin/bash Miniconda3-latest-Linux-x86_64.sh -b
+	$HOME/miniconda3/bin/conda init
 fi
 echo "[*] Completed Installing PreRequisites"
 
