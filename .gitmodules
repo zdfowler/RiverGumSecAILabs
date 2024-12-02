@@ -1,0 +1,3 @@
+[submodule "024_AdversarialAI/PyRIT"]
+	path = 024_AdversarialAI/PyRIT
+	url = https://github.com/Azure/PyRIT.git
