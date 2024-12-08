@@ -15,11 +15,11 @@ Within this repository is a steady progression of topics as follows:
 The best possible way to fully understand what is contained in this collection
 is to sign up for the class mentioned above.
 
-Copyright (c) 2024
-Black Hills Information Security LLC
-Rivergum Security LLC
+    Copyright (c) 2024
+    Powered by:
+        Black Hills Information Security LLC
+        Rivergum Security LLC
+    Authors:
+        Joff Thyer
+        Derek Banks
 
-Authors:
-
-    Joff Thyer
-    Derek Banks
